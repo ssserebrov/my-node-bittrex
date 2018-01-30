@@ -1,0 +1,9 @@
+{
+  "name": "my-node-bittrex",
+  "version": "0.0.0",
+  "description": "my-node-bittrex",
+  "main": "app.js",
+  "author": {
+    "name": "ASerebrov"
+  }
+}
