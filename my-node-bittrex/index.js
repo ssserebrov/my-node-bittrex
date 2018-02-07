@@ -8,6 +8,18 @@ exports.init = function (apikey, apisecret) {
     });
 }
 
+exports.getBalances = function () {
+    return new Promise((resolve, reject) => {
+        bittrex.getbalances(function (data, err) {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve(data.result);
+        });
+    })
+}
+
 exports.getBalance = function (currency) {
     return new Promise((resolve, reject) => {
         bittrex.getbalance({ currency: currency }, function (data, err) {
@@ -35,7 +47,7 @@ exports.getDepositHistories = function () {
 
 exports.getDepositHistory = function (market) {
     return new Promise((resolve, reject) => {
-        bittrex.getdeposithistory({ currency: currency}, function (data, err) {
+        bittrex.getdeposithistory({ currency: currency }, function (data, err) {
             if (err) {
                 reject(err);
                 return;
